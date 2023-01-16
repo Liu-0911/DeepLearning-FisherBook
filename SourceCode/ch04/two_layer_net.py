@@ -41,7 +41,7 @@ class TwoLayerNet:
         return accuracy
         
     # x:输入数据, t:监督数据
-    def numerical_gradient(self, x, t):
+    def numerical_gradient(self, x, t):     #计算权重参数的梯度
         loss_W = lambda W: self.loss(x, t)
         
         grads = {}
@@ -52,7 +52,7 @@ class TwoLayerNet:
         
         return grads
         
-    def gradient(self, x, t):
+    def gradient(self, x, t):       #计算权重参数的梯度的高速版
         W1, W2 = self.params['W1'], self.params['W2']
         b1, b2 = self.params['b1'], self.params['b2']
         grads = {}
